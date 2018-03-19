@@ -2,7 +2,7 @@
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd) {
     HMODULE PowrProf = LoadLibrary("PowrProf.dll");
-    if (!HMODULE) {
+    if (!PowrProf) {
         return 1;
     }
     typedef BOOL (CALLBACK *LPSetSuspendState)(BOOL,BOOL,BOOL);
