@@ -3,12 +3,10 @@
 
 // https://stackoverflow.com/a/16719260/6848772
 DWORD mkdir(TCHAR *path) {
-    TCHAR path2[MAX_PATH + 1];
-    ZeroMemory(path2, (MAX_PATH + 1) * sizeof(TCHAR));
+    TCHAR path2[MAX_PATH + 1] = {0};
     _tcscpy(path2, path);
     _tcscat(path2, _T("\\"));
-    TCHAR folder[MAX_PATH + 1];
-    ZeroMemory(folder, (MAX_PATH + 1) * sizeof(TCHAR));
+    TCHAR folder[MAX_PATH + 1] = {0};
     TCHAR *end = _tcschr(path, _T('\\'));
     while (end != NULL) {
         _tcsncpy(folder, path, end - path + 1);
